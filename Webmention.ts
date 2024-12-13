@@ -1,6 +1,9 @@
 
-const sourceUrl = "https://webmention.io/webmention-client.vercel.app/webmention"; 
-const targetUrl = "https://webmention-client.vercel.app/blogpost1/";
+const sourceUrl = "https://webmmention-workshop.vercel.app/"; 
+const targetUrl = "https://webmention-client.vercel.app/";
+
+
+
 
 async function getWebmentionEndpoint(target: string): Promise<string> {
   try {
@@ -49,5 +52,18 @@ async function sendWebmention() {
     console.error("Error while sending webmention:", error);
   }
 }
-const button = document.getElementById("send-webmention");
- button!.addEventListener("click", sendWebmention);
+
+document.addEventListener("DOMContentLoaded", () => {
+    (async () => {
+        const sourceUrl = "https://webmmention-workshop.vercel.app/";
+        const targetUrl = "https://webmention-client.vercel.app/";
+        console.log("Source URL:", sourceUrl);
+        //sendWebmention(sourceUrl, targetUrl);
+        const web_button = document.getElementById("send-webmention");       
+        web_button?.addEventListener("click", async function(){
+            console.log("Webmention button clicked");
+            await sendWebmention();
+        });
+   
+    })();    
+})    
