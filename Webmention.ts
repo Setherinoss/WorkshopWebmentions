@@ -49,5 +49,5 @@ async function sendWebmention() {
     console.error("Error while sending webmention:", error);
   }
 }
-
-sendWebmention();
+const button = document.getElementById("send-webmention");
+ button!.addEventListener("click", sendWebmention);
