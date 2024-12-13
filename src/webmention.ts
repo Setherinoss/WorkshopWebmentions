@@ -1,6 +1,6 @@
 
 const sourceUrl = "https://webmmention-workshop.vercel.app/"; 
-const targetUrl = "https://webmention-client.vercel.app/";
+const targetUrl = "https://webmention-client.vercel.app/blogpost1/";
 
 
 
@@ -55,8 +55,6 @@ async function sendWebmention() {
 
 document.addEventListener("DOMContentLoaded", () => {
     (async () => {
-        const sourceUrl = "https://webmmention-workshop.vercel.app/";
-        const targetUrl = "https://webmention-client.vercel.app/";
         console.log("Source URL:", sourceUrl);
         //sendWebmention(sourceUrl, targetUrl);
         const web_button = document.getElementById("send-webmention");       
